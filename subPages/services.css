@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{ /*Links control*/
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{ 
+    width: 150px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+
+.wrapper{
+    font-family: 'raleway';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fafafa;
+
+}
+
+.wrapper h1{
+    font-size: 3em;
+    margin: 25px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.content-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin-top: 30px;
+}
+
+.card{
+    min-height: 220px;
+    width: 320px;
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    margin: 10px 4px;
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.2);
+}
+
+.card i{
+    margin: 20px;
+    color: #ff5724;
+}
+
+.card h2{
+    margin-bottom: 12px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.card p{
+    color: #6c757d;
+    text-align: center;
+}
+
+.card:hover i,
+.card:hover p{
+    color: #fff;
+}
+.card:hover h2{
+    font-weight: 600;
+    color: #f2f2f2;
+}
+.card:nth-child(1):hover{
+    background:linear-gradient(45deg,
+                             rgba(255,28,8,0.7) 0%,
+                             rgba(255,0,82,0.7) 100%),
+                             url('images/collection_1.jpg');
+    background-size: cover;
+}
+
+.card:nth-child(2):hover{
+    background:linear-gradient(45deg,
+                             rgba(255,28,8,0.7) 0%,
+                             rgba(255,0,82,0.7) 100%),
+                             url('images/collection_2.jpg');
+    background-size: cover;
+}
+
+.card:nth-child(3):hover{
+    background:linear-gradient(45deg,
+                             rgba(255,28,8,0.7) 0%,
+                             rgba(255,0,82,0.7) 100%),
+                             url('images/collection_3.jpg');
+    background-size: cover;
+}
+
+.card:nth-child(4):hover{
+    background:linear-gradient(45deg,
+                             rgba(255,28,8,0.7) 0%,
+                             rgba(255,0,82,0.7) 100%),
+                             url('images/collection_4.jpg');
+    background-size: cover;
+}
+
+.card:nth-child(5):hover{
+    background:linear-gradient(45deg,
+                             rgba(255,28,8,0.7) 0%,
+                             rgba(255,0,82,0.7) 100%),
+                             url('images/collection_5.jpg');
+    background-size: cover;
+}
+
+.card:nth-child(6):hover{
+    background:linear-gradient(45deg,
+                             rgba(255,28,8,0.7) 0%,
+                             rgba(255,0,82,0.7) 100%),
+                             url('images/collection_6.jpg');
+    background-size: cover;
+}
