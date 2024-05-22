@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+.header{ /*background control*/
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/banner.jpg);
+    
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+
 nav{ /*Links control*/
     display: flex;
     padding: 2% 6%;
