@@ -7,7 +7,7 @@
 .header{ /*background control*/
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/banner.jpg);
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../images/banner.jpg);
     
     background-position: center;
     background-size: cover;
@@ -65,7 +65,7 @@ nav img{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #fafafa;
+    background: transparent;
 
 }
 
@@ -123,7 +123,7 @@ nav .fa{
         font-size: 20px
     }
     .nav-links ul li{
-        display: block; yz ,i7
+        display: block;
     }
     .nav-links{
         position: absolute;
@@ -152,24 +152,27 @@ nav .fa{
 .card:hover i,
 .card:hover p{
     color: #fff;
+    transition: 1s;
 }
 .card:hover h2{
     font-weight: 600;
     color: #f2f2f2;
+    transition: 1s;
 }
 .card:nth-child(1):hover{
     background:linear-gradient(45deg,
                              rgba(255,28,8,0.7) 0%,
                              rgba(255,0,82,0.7) 100%),
-                             url('images/collection_1.jpg');
+                             url('../images/collection_1.jpg');
     background-size: cover;
+
 }
 
 .card:nth-child(2):hover{
     background:linear-gradient(45deg,
                              rgba(255,28,8,0.7) 0%,
                              rgba(255,0,82,0.7) 100%),
-                             url('images/collection_2.jpg');
+                             url('../images/collection_2.jpg');
     background-size: cover;
 }
 
@@ -177,7 +180,7 @@ nav .fa{
     background:linear-gradient(45deg,
                              rgba(255,28,8,0.7) 0%,
                              rgba(255,0,82,0.7) 100%),
-                             url('images/collection_3.jpg');
+                             url('../images/collection_3.jpg');
     background-size: cover;
 }
 
@@ -185,7 +188,7 @@ nav .fa{
     background:linear-gradient(45deg,
                              rgba(255,28,8,0.7) 0%,
                              rgba(255,0,82,0.7) 100%),
-                             url('images/collection_4.jpg');
+                             url('../images/collection_4.jpg');
     background-size: cover;
 }
 
@@ -193,7 +196,7 @@ nav .fa{
     background:linear-gradient(45deg,
                              rgba(255,28,8,0.7) 0%,
                              rgba(255,0,82,0.7) 100%),
-                             url('images/collection_5.jpg');
+                             url('../images/collection_5.jpg');
     background-size: cover;
 }
 
@@ -201,6 +204,6 @@ nav .fa{
     background:linear-gradient(45deg,
                              rgba(255,28,8,0.7) 0%,
                              rgba(255,0,82,0.7) 100%),
-                             url('images/collection_6.jpg');
+                             url('../images/collection_6.jpg');
     background-size: cover;
 }

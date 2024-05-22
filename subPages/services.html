@@ -9,6 +9,7 @@
 
 </head>
 <body>
+    <section class="header">
     <nav>
         <a href="index.html"><img src="images/logo.png"></a>  <!-- LOGO TBD -->
         <div class="nav-links" id="navLinks">
@@ -23,8 +24,7 @@
     </nav>
     
 <div class="wrapper">
-    <h1>ჩვენი სერვისები</h1>
-    <p>Paragraph</p>
+    
 
     <div class="content-box">
         <div class="card">
@@ -58,6 +58,22 @@
             <p>Paragraph</p>
         </div>
     </div>
+</section>
+
+<!------- JavaScript for Toggle Menu ---->
+<script>
+
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0"
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px"
+    }
+
+</script>
+
 </div>
 </body>
 </html>
