@@ -80,7 +80,7 @@ nav img{
     justify-content: space-between;
     flex-wrap: wrap;
     width: 1000px;
-    margin-top: 30px;
+    margin-top: 70px;
 }
 
 .card{
@@ -137,7 +137,7 @@ nav .fa{
     }
     nav .fa{
         display: block;
-        color: #fff;
+        color: #444;
         margin: 10px;
         font-size: 22px;
         cursor: pointer;
@@ -148,7 +148,7 @@ nav .fa{
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     
     .wrapper h1{
         font-size: 3em;
@@ -181,6 +181,7 @@ nav .fa{
     }
 }
 
+
 .card:hover i,
 .card:hover p{
     color: #fff;
@@ -191,6 +192,7 @@ nav .fa{
     color: #f2f2f2;
     transition: 1s;
 }
+
 .card:nth-child(1):hover{
     background:linear-gradient(45deg,
                              rgba(255,28,8,0.7) 0%,
