@@ -148,4 +148,36 @@ nav .fa{
     }
 }
 
-
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 150px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h1, h2 {
+    color: #0056b3;
+  }
+  
+  .contact-info, .contact-form {
+    margin-bottom: 20px;
+  }
+  
+  .contact-info h2 {
+    margin-top: 0;
+  }
+  
+  .contact-info p, .contact-form label {
+    margin: 10px 0;
+  }
+  
