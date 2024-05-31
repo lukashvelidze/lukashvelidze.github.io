@@ -1,66 +1,90 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.header{ /*background control*/
-    min-height: 100vh;
-    width: 100%;
-    
-    background-position: center;
-    background-size: cover;
-    position: relative;
-
+/* Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
-nav{ /*Links control*/
+/* Header Section */
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background: url('your-background-image.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* Navigation Styles */
+nav {
     display: flex;
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-nav img{ 
+nav img {
     width: 150px;
 }
 
-.nav-links{
+.nav-links {
     flex: 1;
     text-align: right;
 }
 
-.nav-links ul li{
+.nav-links ul {
     list-style: none;
+}
+.nav-links ul li {
     display: inline-block;
-    padding: 8px 12px;
+    margin: 0 15px;
     position: relative;
 }
 
-.nav-links ul li a{
-    color: #000000;
+.nav-links ul li a {
+    color: white;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
-.nav-links ul li::after{
+.nav-links ul li a:hover {
+    color: #f44336;
+}
+
+.nav-links ul li::after {
     content: '';
-    width: 0%;
+    width: 0;
     height: 2px;
     background: #f44336;
     display: block;
     margin: auto;
-    transition: 0.5s;
+    transition: width 0.5s;
 }
 
-.nav-links ul li:hover::after{
+.nav-links ul li:hover::after {
     width: 100%;
 }
 
-
-nav .fa{
+nav .fa {
     display: none;
 }
+
+/* Media Queries */
 
 @media (max-width: 700px) {
     .text-box h1{
@@ -101,28 +125,31 @@ body {
     padding: 0;
   }
   
-  .container {
+/* Container Styles */
+.container {
     max-width: 800px;
     margin: 150px auto;
     padding: 20px;
     background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-  }
-  
-  h1, h2 {
-    color: #537396;
-  }
-  
-  .contact-info, .contact-form {
+}
+
+/* Typography */
+h1, h2 {
+    color: #333;
+    font-weight: 700;
     margin-bottom: 20px;
-  }
-  
-  .contact-info h2 {
+}
+
+.contact-info, .contact-form {
+    margin-bottom: 20px;
+}
+
+.contact-info h2 {
     margin-top: 0;
-  }
-  
-  .contact-info p, .contact-form label {
+}
+
+.contact-info p, .contact-form label {
     margin: 10px 0;
-  }
-  
+}
