@@ -130,23 +130,31 @@ nav .fa{
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
+  flex-direction: column;
 }
 .card {
+  display: flex;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
-  text-align: center;
-  width: 200px;
+  text-align: left;
+  width: 1000px;
   background: #fff;
+  align-items: flex-start;
 }
 .card img {
-  max-width: 100%;
+  max-width: 30%;
   height: auto;
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px 0 0 8px;
+  margin-right: 16px;
+}
+.card .text-content {
+  display: flex;
+  flex-direction: column;
 }
 .card h2 {
   font-size: 1.5em;
-  margin: 16px 0;
+  margin: 16px 0 8px 0;
 }
 .card p {
   margin: 8px 0;
@@ -154,6 +162,7 @@ nav .fa{
 .card .price {
   font-weight: bold;
   color: #2c3e50;
+  margin-top: 8px;
 }
 .card a.card-link {
   display: inline-block;
@@ -163,4 +172,38 @@ nav .fa{
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
+}
+
+
+@media (max-width: 1000px) {
+    
+  .wrapper h1{
+      font-size: 3em;
+      margin: 25px 0;
+      text-align: center;
+      font-weight: 500;
+  }
+  
+  .content-box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 30px;
+  }
+  
+  .card{
+      min-height: 220px;
+      width: 80%;
+      padding: 30px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #fff;
+      margin: 10px 4px;
+      box-shadow: 0px 15px 30px rgba(0,0,0,0.2);
+  }
 }
