@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arch-Studia</title>
+    <link rel="stylesheet" href="service_1.css">
+    <script src="https://kit.fontawesome.com/7d6661fc3a.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png"></a>  <!-- LOGO TBD -->
+            <div class="nav-links" id="navLinks">
+              <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul> <!-- LINKS TO PAGES-->
+                    <li><a href="../../index.html">მთავარი</a></li>
+                    <li><a href="../../subpages/services.html">სერვისები</a></li>
+                    <li><a href="../../subpages/contacts.html">კონტაქტი</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        
+        <div class="wrapper">
+            <div class="content-box">
+                <div class="card">
+                    <img src="product_images/IAJ-D.png" class="card-image">
+                    <div class="text-content">
+                    <h2>Axial Jet Fan</h2>
+                    <p>Jet fans are designed to be used at underground parking lots. 
+                        They are more efficient than duct system where the air has to 
+                        go through ducts and will lose power because of friction.</p>
+                    <p class="price">$99.99</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="product_images/ISEA.png" class="card-image">
+                    <div class="text-content">
+                    <h2>Axial Smoke Exhaust Fan</h2>
+                    <p>Axial Smoke Exhaust Fans can keep working for two hours 
+                        at 400 °C and in combination with Jet Fans can be used 
+                        to extract smoke from parking lots in case of fire.</p>
+                    <p class="price">$99.99</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+</body>
+
+
+<!------- JavaScript for Toggle Menu ---->
+<script>
+
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0"
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px"
+    }
+
+</script>
+
+
+</body>
+</html>
+
