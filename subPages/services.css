@@ -23,7 +23,7 @@
 .header{ /*background control*/
     min-height: 100vh;
     width: 100%;
-    background-image: url("../images/banner.jpg");
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../images/banner.jpg);
     
     background-position: center;
     background-size: cover;
@@ -55,7 +55,7 @@ nav img{
 }
 
 .nav-links ul li a{
-    color: #000000;
+    color: #fff;
     text-decoration: none;
     font-size: 13px;
 }
@@ -100,6 +100,16 @@ nav img{
     margin-top: 70px;
 }
 
+/*Card link Control*/
+.card-link-1{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+}
+
 .card{
     min-height: 220px;
     width: 320px;
@@ -116,8 +126,9 @@ nav img{
 
 .card i{
     font-size: 120%;
-    margin: 20px;
+    margin: 10px;
     color: #ff5724;
+    text-align: center;
 }
 
 .card h2{
@@ -240,7 +251,7 @@ nav .fa{
     background:linear-gradient(45deg,
                              rgba(255,28,8,0.7) 0%,
                              rgba(255,0,82,0.7) 100%),
-                             url('../images/collection_4.jpg');
+                             url('../images/collection_3.jpg');
     background-size: cover;
 }
 
@@ -248,7 +259,7 @@ nav .fa{
     background:linear-gradient(45deg,
                              rgba(255,28,8,0.7) 0%,
                              rgba(255,0,82,0.7) 100%),
-                             url('../images/collection_5.jpg');
+                             url('../images/collection_2.jpg');
     background-size: cover;
 }
 
@@ -256,6 +267,6 @@ nav .fa{
     background:linear-gradient(45deg,
                              rgba(255,28,8,0.7) 0%,
                              rgba(255,0,82,0.7) 100%),
-                             url('../images/collection_6.jpg');
+                             url('../images/collection_1.jpg');
     background-size: cover;
 }
