@@ -31,6 +31,12 @@
 
 }
 
+.footer {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+}
+
 nav{ /*Links control*/
     display: flex;
     padding: 2% 6%;
