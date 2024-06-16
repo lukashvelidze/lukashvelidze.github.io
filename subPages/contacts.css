@@ -20,6 +20,9 @@
     }
 }
 
+body { overflow-x:hidden; } 
+body { overflow-y:hidden; } 
+
 /* Body Styles */
 body {
     font-family: 'Roboto', sans-serif;

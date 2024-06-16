@@ -20,7 +20,8 @@
     }
 }
 
-body { overflow-x:hidden; }
+body { overflow-x:hidden; } 
+body { overflow-y:hidden; } 
 
 .header{ /*background control*/
     min-height: 100vh;
