@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 .header{
     animation: transitionIn 1s;
 }
@@ -19,6 +20,7 @@
     }
 }
 
+body { overflow-x:hidden; }
 
 .header{ /*background control*/
     min-height: 100vh;
