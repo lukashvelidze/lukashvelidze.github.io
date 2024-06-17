@@ -153,6 +153,11 @@ nav .fa{
 }
 
 @media (max-width: 700px) {
+
+    a.logo img {
+        width: 80px; /* Set the desired width */
+        height: auto; /* Maintains the aspect ratio */
+    }
     .text-box h1{
         font-size: 20px
     }
@@ -184,6 +189,7 @@ nav .fa{
 }
 
 @media (max-width: 1000px) {
+
     
     .wrapper h1{
         font-size: 3em;

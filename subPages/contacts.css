@@ -97,6 +97,10 @@ nav .fa {
     .nav-links ul li{
         display: block;
     }
+    a.logo img {
+        width: 90px; /* Set the desired width */
+        height: auto; /* Maintains the aspect ratio */
+    }
     .nav-links{
         position: absolute;
         background: #f44336;

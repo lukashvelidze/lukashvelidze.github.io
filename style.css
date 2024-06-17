@@ -129,6 +129,12 @@ nav .fa{
     .text-box h1{
         font-size: 50px
     }
+
+    a.logo img {
+        width: 90px; /* Set the desired width */
+        height: auto; /* Maintains the aspect ratio */
+    }
+
     .text-box p{
         margin: 10px 0 40px;
         font-size: 45px;
