@@ -8,6 +8,7 @@
     animation: transitionIn 1s;
 }
 
+body { overflow-x:hidden; }
 
 @keyframes transitionIn{
     from {
@@ -171,7 +172,7 @@ nav .fa{
     }
     nav .fa{
         display: block;
-        color: #444;
+        color: #ffffff;
         margin: 10px;
         font-size: 22px;
         cursor: pointer;
