@@ -10,6 +10,7 @@
 Contacts:
 
 *Contacts to be updated
+*Scale of the white box to be adjusted
 
 
 Services: 
