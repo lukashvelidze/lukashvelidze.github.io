@@ -131,6 +131,8 @@ h1, h2 {
 /* Media Queries */
 
 @media (max-width: 700px) {
+    body { overflow-x:hidden; } 
+    body { overflow-y:hidden; }
     .text-box h1{
         font-size: 20px
     }
