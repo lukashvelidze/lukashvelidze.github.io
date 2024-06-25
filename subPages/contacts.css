@@ -99,6 +99,35 @@ nav .fa {
     box-shadow: #333;
 }
 
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+/* Typography */
+h1, h2 {
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact-info, .contact-form {
+    margin-bottom: 20px;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+}
+
+.contact-info p, .contact-form label {
+    margin: 10px 0;
+}
+
 /* Media Queries */
 
 @media (max-width: 800px) {
@@ -145,32 +174,4 @@ nav .fa {
         padding: 30px;
 
     }
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
-
-/* Typography */
-h1, h2 {
-    color: #333;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.contact-info, .contact-form {
-    margin-bottom: 20px;
-}
-
-.contact-info h2 {
-    margin-top: 0;
-}
-
-.contact-info p, .contact-form label {
-    margin: 10px 0;
 }
