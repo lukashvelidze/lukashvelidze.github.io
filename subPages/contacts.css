@@ -21,7 +21,7 @@
 }
 
 body { overflow-x:hidden; } 
-body { overflow-y:hidden; } 
+ 
 
 /* Body Styles */
 body {
@@ -91,7 +91,7 @@ nav .fa {
 /* Container Styles */
 .container {
     max-width: 800px;
-    margin: 150px auto;
+    margin: 10px auto;
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -128,8 +128,10 @@ h1, h2 {
     margin: 10px 0;
 }
 
-.mapimage{
-    size: 50%;
+.mapimg{
+    height: 300px;
+    width: auto;
+    position: relative;
 }
 
 /* Media Queries */
