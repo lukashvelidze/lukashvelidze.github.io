@@ -2,20 +2,20 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arch-Studia</title>
+    <title>Arch-Studia Marketplace</title>
     <link rel="stylesheet" href="service_3.css">
     <script src="https://kit.fontawesome.com/7d6661fc3a.js" crossorigin="anonymous"></script>
     <link rel="icon" type="img" href="../../images/Logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
 </head>
 <body>
     <section class="header">
         <nav>
-            <a href="index.html"><img src="../../images/Logo.png"></a>  <!-- LOGO TBD -->
+            <a href="index.html"><img src="../../images/Logo.png"></a>
             <div class="nav-links" id="navLinks">
-              <i class="fa fa-times" onclick="hideMenu()"></i>
-                <ul> <!-- LINKS TO PAGES-->
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
                     <li><a href="../../index.html">მთავარი</a></li>
-                    <!-- <li><a href="subPages/services.html">სერვისები</a></li>-->
                     <li><a href="../../subPages/products.html">პროდუქცია</a></li>
                     <li><a href="../../subPages/contacts.html">კონტაქტი</a></li>
                 </ul>
@@ -23,74 +23,63 @@
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
 
-        
         <div class="wrapper">
-            <div class="content-box">
-                <div class="card">
-                    <img src="product_images/IRF-R.png" class="card-image">
-                    <div class="text-content">
-                    <h2>სახურავხე დამაგრებული ჰორიზონტალურად კონფიგურირებული ფენი</h2>
-                    <p>IRF-R fans can be used in low to medium volume projects and can be mounted on the roof. 
-                        Easy-to-install with long-lasting motor and efficient impeller</p>
-                    <p class="price">$99.99</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="product_images/IRF-M.png" class="card-image">
-                    <div class="text-content">
-                    <h2>სახურავხე დამაგრებული ჰორიზონტალურად კონფიგურირებული ფენი ძრავით</h2>
-                    <p>IRF-M fans can be used where the air that it exhausts has particles 
-                        in it that would damage the motor. Its single-phase motor and
-                         easy-to-install body allows a simple use.</p>
-                    <p class="price">$99.99</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="product_images/IRF-ROV.png" class="card-image">
-                    <div class="text-content">
-                    <h2>სახურავხე დამაგრებული ჰორიზონტალურად კონფიგურირებული ფენი ძრავით</h2>
-                    <p>IRF-ROV fans can be used where the air that it exhausts has particles 
-                        in it that would damage the motor. Vertical discharge allows it to 
-                        be used in close quarters with other things like chimneys and fans.</p>
-                    <p class="price">$99.99</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="product_images/IRJ-D.png" class="card-image">
-                    <div class="text-content">
-                    <h2>Centrifugal Jet Fan</h2>
-                    <p>Centrifugal Jet Fans can be used when there is height issue in the parking lots.</p>
-                    <p class="price">$99.99</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="product_images/ISEA-C.png" class="card-image">
-                    <div class="text-content">
-                    <h2>Axial Box Fan</h2>
-                    <p>Axial box fans can be used in hard-to-install situtaions with its multiple connection point body. 
-                       Default fan has an on-of switch and inbuilt sound attenuator.</p>
-                    <p class="price">$99.99</p>
-                    </div>
-                </div>
+            <div class="content-box" id="product-list">
+                <!-- Dynamic content from Google Sheets will appear here -->
             </div>
         </div>
-</section>
-</body>
+    </section>
 
+    <script>
+        const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQuTmxhxjqlfIC2JvQFqe29MUiYm96B75mnMSydpyvkRZkxmUBwmm7DG7P7npaVIBSW3suNH6Qi2eCP/pub?output=csv';
 
-<!------- JavaScript for Toggle Menu ---->
-<script>
+        // Fetch and display data
+        function fetchCSVData() {
+            fetch(SHEET_URL)
+                .then(response => response.text())
+                .then(csvData => {
+                    // Parse CSV data using PapaParse
+                    const parsedData = Papa.parse(csvData, { header: true }).data;
 
-    var navLinks = document.getElementById("navLinks");
+                    // Call function to render the data
+                    renderProducts(parsedData);
+                })
+                .catch(error => console.error('Error fetching CSV data:', error));
+        }
 
-    function showMenu(){
-        navLinks.style.right = "0"
-    }
-    function hideMenu(){
-        navLinks.style.right = "-200px"
-    }
+        // Render product cards dynamically
+        function renderProducts(products) {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = ''; // Clear existing content
 
-</script>
+            products.forEach(product => {
+                // Only process valid rows (check for required fields)
+                if (product.Item_ID && product.Item_name && product.Price) {
+                    const card = `
+                        <div class="card">
+                            <h2>${product.Item_name}</h2>
+                            <p><strong>Type:</strong> ${product.Type || 'N/A'}</p>
+                            <p><strong>Price:</strong> $${product.Price}</p>
+                            <p><strong>Stock:</strong> ${product.Stock || 'N/A'}</p>
+                            <p><strong>Status:</strong> ${product.Status || 'N/A'}</p>
+                            <p><strong>Description:</strong> ${product.Description || 'No description available.'}</p>
+                        </div>
+                    `;
+                    productList.innerHTML += card;
+                }
+            });
+        }
+
+        // Initialize data fetching
+        fetchCSVData();
+
+        // Menu toggle functions
+        function showMenu() {
+            document.getElementById('navLinks').style.right = "0";
+        }
+        function hideMenu() {
+            document.getElementById('navLinks').style.right = "-200px";
+        }
+    </script>
 </body>
 </html>
-
