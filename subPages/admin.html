@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Sidebar Toggle Button (Visible on Mobile) -->
+    <button class="sidebar-toggle" onclick="toggleSidebar()">&#9776;</button>
+
+    <div class="dashboard-container">
+        <nav class="sidebar" id="adminSidebar">
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <header>
+                <h1>Welcome, Admin</h1>
+            </header>
+            <section class="inventory">
+                <h2>Inventory Management</h2>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>Fire Alarm</td>
+                        <td>20</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("adminSidebar");
+            sidebar.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
