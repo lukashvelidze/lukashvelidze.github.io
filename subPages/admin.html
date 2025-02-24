@@ -13,10 +13,10 @@
 
     <div class="dashboard-container">
         <nav class="sidebar" id="adminSidebar">
-            <h2>Admin Panel</h2>
+            <h2>Arch-Studio</h2>
             <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="admin_support/inventory.html">Inventory</a></li>
                 <li><a href="orders.html">Orders</a></li>
                 <li><a href="settings.html">Settings</a></li>
             </ul>
@@ -24,34 +24,126 @@
 
         <div class="main-content">
             <header>
-                <h1>Welcome, Admin</h1>
+                <h1>Admin Dashboard </h1>
             </header>
+
+            <!-- Search Bar -->
+            <section class="search-section">
+                <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchProduct()">
+            </section>
+
+            <!-- Inventory Management -->
             <section class="inventory">
                 <h2>Inventory Management</h2>
-                <table>
+                <table id="inventoryTable">
                     <tr>
                         <th>Product</th>
                         <th>Stock</th>
                         <th>Actions</th>
                     </tr>
-                    <tr>
-                        <td>Fire Alarm</td>
-                        <td>20</td>
-                        <td>
-                            <button class="edit-btn">Edit</button>
-                            <button class="delete-btn">Delete</button>
-                        </td>
-                    </tr>
+                    <!-- Product Rows will be inserted dynamically here -->
                 </table>
+
+                <!-- Add Product Form -->
+                <h3>Add Product</h3>
+                <form id="addProductForm" onsubmit="addProduct(event)">
+                    <input type="text" id="productName" placeholder="Product Name" required>
+                    <input type="number" id="productStock" placeholder="Stock" required>
+                    <input type="number" id="productPrice" placeholder="Price" required>
+                    <button type="submit">Add Product</button>
+                </form>
             </section>
         </div>
     </div>
 
     <script>
+        // Sidebar Toggle Function
         function toggleSidebar() {
             const sidebar = document.getElementById("adminSidebar");
             sidebar.classList.toggle("active");
         }
+
+        // Fetch Products from the Database
+        async function fetchProducts() {
+            const response = await fetch('https://your-api-url.com/get-products');
+            const products = await response.json();
+            const table = document.getElementById("inventoryTable");
+            // Clear existing rows
+            table.innerHTML = `
+                <tr>
+                    <th>Product</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                </tr>
+            `;
+            products.forEach(product => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${product.name}</td>
+                    <td>${product.stock}</td>
+                    <td>
+                        <button class="edit-btn" onclick="editProduct(${product.id})">Edit</button>
+                        <button class="delete-btn" onclick="deleteProduct(${product.id})">Delete</button>
+                    </td>
+                `;
+                table.appendChild(row);
+            });
+        }
+
+        // Search for Products
+        function searchProduct() {
+            const input = document.getElementById("searchInput").value;
+            const table = document.getElementById("inventoryTable");
+            const rows = table.getElementsByTagName("tr");
+            for (let i = 1; i < rows.length; i++) {
+                const product = rows[i].getElementsByTagName("td")[0];
+                if (product) {
+                    const text = product.textContent || product.innerText;
+                    rows[i].style.display = text.toLowerCase().includes(input.toLowerCase()) ? "" : "none";
+                }
+            }
+        }
+
+        // Add Product
+        async function addProduct(event) {
+            event.preventDefault();
+            const name = document.getElementById("productName").value;
+            const stock = document.getElementById("productStock").value;
+            const price = document.getElementById("productPrice").value;
+            
+            const response = await fetch('https://your-api-url.com/add-product', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, stock, price })
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                alert("Product added successfully!");
+                fetchProducts();
+            } else {
+                alert("Error adding product!");
+            }
+        }
+
+        // Delete Product
+        async function deleteProduct(productId) {
+            const response = await fetch(`https://your-api-url.com/delete-product/${productId}`, {
+                method: 'DELETE'
+            });
+            const result = await response.json();
+            if (result.success) {
+                alert("Product deleted successfully!");
+                fetchProducts();
+            } else {
+                alert("Error deleting product!");
+            }
+        }
+
+        // Initial Product Load
+        window.onload = fetchProducts;
     </script>
 </body>
 </html>

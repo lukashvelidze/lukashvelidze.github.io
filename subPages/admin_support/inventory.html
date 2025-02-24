@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="inventory.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="adminSidebar">
+            <h2>Arch-Studio</h2>
+            <ul>
+                <li><a href="../admin.html">Dashboard</a></li>
+                <li><a href="admin_support/inventory.html">Inventory</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1>Inventory Management</h1>
+            </header>
+
+            <section class="inventory">
+                <h2>Product Inventory</h2>
+
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products by name...">
+                    <button onclick="searchProduct()">Search</button>
+                </div>
+
+                <!-- Inventory Table -->
+                <table id="productTable">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Product Name</th>
+                            <th>Model Number</th>
+                            <th>Stock</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <script src="inventory.js"></script>
+</body>
+</html>

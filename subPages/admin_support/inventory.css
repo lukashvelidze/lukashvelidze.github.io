@@ -3,7 +3,6 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    color: #333;
 }
 
 /* Dashboard Layout */
@@ -19,13 +18,17 @@ body {
     background-color: #2C3E50;
     color: white;
     padding: 20px;
+    /* Removed fixed positioning so that the sidebar becomes part of the flex layout */
+    /* position: fixed; */
+    /* height: 100vh; */
+    /* left: 0; top: 0; */
     transition: transform 0.3s ease-in-out;
+    /* Remove z-index if not needed */
 }
 
 .sidebar h2 {
     margin-bottom: 20px;
     text-align: center;
-    font-size: 22px;
 }
 
 .sidebar ul {
@@ -43,22 +46,10 @@ body {
     display: block;
     padding: 10px;
     transition: background 0.3s;
-    font-size: 16px;
 }
 
 .sidebar ul li a:hover {
     background-color: #1A252F;
-}
-
-/* Sidebar Toggle Button (Mobile View) */
-.sidebar-toggle {
-    display: none;
-    background-color: #2C3E50;
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
 }
 
 /* Main Content */
@@ -67,47 +58,6 @@ body {
     padding: 20px;
     background-color: #ecf0f1;
     overflow-y: auto;
-}
-
-/* Header */
-header h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-/* Search Bar */
-.search-section {
-    margin-bottom: 20px;
-}
-
-.search-section input {
-    width: 250px;
-    padding: 8px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: border-color 0.3s;
-}
-
-.search-section input:focus {
-    border-color: #3498DB;
-}
-
-.search-section button {
-    padding: 8px 12px;
-    background-color: #3498DB;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: background 0.3s;
-}
-
-.search-section button:hover {
-    background-color: #2980B9;
 }
 
 /* Inventory Section */
@@ -120,11 +70,45 @@ header h1 {
     margin-bottom: 30px;
 }
 
-.inventory h2 {
+header h1 {
+    font-size: 24px;
     margin-bottom: 20px;
-    font-size: 20px;
+    font-weight: bold;
 }
 
+/* Search Bar */
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 250px;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #2980B9;
+}
+
+/* Inventory Table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -147,7 +131,7 @@ table td {
 }
 
 /* Action Buttons */
-.edit-btn, .delete-btn, .add-btn {
+.edit-btn, .delete-btn {
     border: none;
     padding: 8px 12px;
     cursor: pointer;
@@ -174,40 +158,6 @@ table td {
     background-color: #C0392B;
 }
 
-.add-btn {
-    background-color: #2ECC71;
-    color: white;
-}
-
-.add-btn:hover {
-    background-color: #27AE60;
-}
-
-/* Add Product Form */
-form input {
-    margin-bottom: 10px;
-    padding: 8px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-form button {
-    padding: 8px 12px;
-    background-color: #2ECC71;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: background 0.3s;
-}
-
-form button:hover {
-    background-color: #27AE60;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .dashboard-container {
@@ -216,28 +166,13 @@ form button:hover {
 
     .sidebar {
         width: 100%;
-        position: absolute;
-        top: 0;
-        left: -250px;
-        transition: left 0.3s ease-in-out;
-    }
-
-    .sidebar.active {
-        left: 0;
-    }
-
-    .sidebar-toggle {
-        display: block;
-        position: absolute;
-        top: 20px;
-        left: 20px;
     }
 
     .main-content {
         padding: 15px;
     }
 
-    .search-section input {
+    .search-bar input {
         width: 200px;
     }
 
@@ -246,7 +181,7 @@ form button:hover {
         font-size: 13px;
     }
 
-    .edit-btn, .delete-btn, .add-btn {
+    .edit-btn, .delete-btn {
         padding: 6px 10px;
         font-size: 12px;
     }
