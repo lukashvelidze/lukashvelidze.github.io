@@ -1,0 +1,5 @@
+[
+    { "category": "Fire Safety", "name": "Smoke Detector", "model": "SD-100", "stock": 50, "price": 19.99 },
+    { "category": "Fire Safety", "name": "Fire Extinguisher", "model": "FE-200", "stock": 30, "price": 49.99 },
+    { "category": "Security", "name": "CCTV Camera", "model": "CC-300", "stock": 20, "price": 99.99 }
+]

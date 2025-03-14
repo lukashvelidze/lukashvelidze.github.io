@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Management</title>
-    <link rel="stylesheet" href="../admin_support/inventory.css">
+    <link rel="stylesheet" href="inventory.css">
 </head>
 <body>
     <div class="dashboard-container">
         <!-- Sidebar Navigation -->
-        <nav class="sidebar">
+        <nav class="sidebar" id="adminSidebar">
             <h2>Arch-Studio</h2>
             <ul>
                 <li><a href="../admin.html">Dashboard</a></li>
-                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="admin_support/inventory.html">Inventory</a></li>
                 <li><a href="orders.html">Orders</a></li>
                 <li><a href="settings.html">Settings</a></li>
             </ul>
@@ -50,37 +50,10 @@
                         <!-- Data will be dynamically populated here -->
                     </tbody>
                 </table>
-
-                <!-- Add Product Form -->
-                <h2>Add New Product</h2>
-                <form id="addProductForm">
-                    <label for="category">Category:</label>
-                    <select id="category" required>
-                        <option value="1">Detection</option>
-                        <option value="2">Smoke</option>
-                        <option value="3">Water</option>
-                        <option value="4">Evacuation</option>
-                        <option value="5">Broadcast</option>
-                    </select>
-
-                    <label for="name">Product Name:</label>
-                    <input type="text" id="name" required>
-
-                    <label for="model">Model Number:</label>
-                    <input type="text" id="model" required>
-
-                    <label for="stock">Stock:</label>
-                    <input type="number" id="stock" required>
-
-                    <label for="price">Price:</label>
-                    <input type="number" step="0.01" id="price" required>
-
-                    <button type="submit">Add Product</button>
-                </form>
             </section>
         </div>
     </div>
 
-    <script src="../static/inventory.js"></script>
+    <script src="inventory.js"></script>
 </body>
 </html>
